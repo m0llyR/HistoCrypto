@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 import HCA.Caesar
 
@@ -11,3 +13,5 @@ s = 11
 enct = HCA.Caesar.encrypt(rawt, s)
 dect = HCA.Caesar.decrypt(enct, s)
 print("Original: {}\nCaesar  : {}\nDecrypt : {}".format(rawt, enct, dect))
+
+# Vigenère

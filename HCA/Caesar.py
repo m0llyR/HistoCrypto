@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 """ Part of HCA - Historical Crypto Algorithms - Not to be considered safe for encryption!
 
 Implementation of the Caesar cipher algorithm
@@ -11,9 +13,9 @@ Thanks to (code elements stolen from):
 import string
 
 
-def encrypt(str_plain, int_shift):
+def encrypt(str_clear, int_shift):
     str_cipher = ''
-    for chr_n in str_plain:
+    for chr_n in str_clear:
         if chr_n not in string.ascii_letters:  # Filtering <space> as well as ,.;:!? etc.
             str_cipher += chr_n
         elif chr_n.isupper():
@@ -24,13 +26,13 @@ def encrypt(str_plain, int_shift):
 
 
 def decrypt(str_cipher, int_shift):
-    str_plain = ''
+    str_clear = ''
     for chr_n in str_cipher:
         if chr_n not in string.ascii_letters:  # Filtering <space> as well as ,.;:!? etc.
-            str_plain += chr_n
+            str_clear += chr_n
         elif chr_n.isupper():
-            str_plain += chr((ord(chr_n) - int_shift - 65) % 26 + 65)
+            str_clear += chr((ord(chr_n) - int_shift - 65) % 26 + 65)
         else:
-            str_plain += chr((ord(chr_n) - int_shift - 97) % 26 + 97)
-    return str_plain
+            str_clear += chr((ord(chr_n) - int_shift - 97) % 26 + 97)
+    return str_clear
 
