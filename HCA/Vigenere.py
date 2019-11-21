@@ -12,7 +12,7 @@ Thanks to (code elements stolen from):
 -
 """
 
-
+look into starmap and cycle from itertool
 
 def rfe(keyword, start=0):
     """ Repeat for ever - looping over keyword """
