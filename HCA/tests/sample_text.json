@@ -1,0 +1,12 @@
+{
+  "ENG_simple_lower": "the quick brown fox jumps over a lazy dog",
+  "ENG_simple_upper": "PACK MY BOX WITH FIVE DOZEN LIQUOR JUGS",
+  "ENG_simple_mixed": "the quick brown fox jumps over a lazy dog PACK MY BOX WITH FIVE DOZEN LIQUOR JUGS",
+  "ENG_simple_special": "The quick brown fox jumps over a lazy dog.,:; 0123456789 @£$¥ []{}()<> ?=+-*/&%#",
+  "EUR_accent_sampl": "ÁáÀàÄäÂâĄą ĆćÇç Ðð ÉéÈèËëÊêĘę ÍíÎîÏï Łł ŃńÑñ ÓóÖöÕõÒòÔô ŚśŠšẞß Þþ ÚúÙùÛûÜü ÝýŸÿ ŹźŻżŽž ŒœÆæØøÅå",
+  "EUR_accent_cover": "Danish, Finnish, French, German, Icelandic, Norwegian, Polish, Spanish, Swedish",
+  "Greek": "",
+  "Cyrillic": "",
+  "Armenian": "",
+  "Georgian": ""
+}
