@@ -9,8 +9,8 @@ class TestCeasar(unittest.TestCase):
         Test Ceasar
         """
         data = "Pack my box with five dozen liquor jugs."
-        result = c.encrypt(data)
-        self.assertEqual(result, "")
+        result = c.encrypt(data, 6)
+        self.assertEqual(result, "Vgiq se hud cozn lobk jufkt rowaux pamy.")
 
 if __name__ == '__main__':
     unittest.main()
