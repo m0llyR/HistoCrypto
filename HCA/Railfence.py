@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" Part of HCA - Historical Crypto Algorithms - Not to be considered safe for encryption!
+"""  Part of HCA - Historical Crypto Algorithms - Not to be considered safe for encryption!
 
 Implementation of the Rail Fence algorithm
 https://en.wikipedia.org/wiki/Rail_fence_cipher

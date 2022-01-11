@@ -1,4 +1,4 @@
-"""  https://www.geeksforgeeks.org/vernam-cipher-in-cryptography/
+"""  from: https://www.geeksforgeeks.org/vernam-cipher-in-cryptography/
 Vernam Cipher in Cryptography
 
 Vernam Cipher is a method of encrypting alphabetic text. It is simply a type of substitution cipher. In this mechanism we assign a number to each character of the Plain-Text, like (a = 0, b = 1, c = 2, … z = 25).

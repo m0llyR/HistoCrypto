@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 
-""" pattern stat """
+""" pattern stat
+"""
 
 fn = r"data/patters.txt"
 

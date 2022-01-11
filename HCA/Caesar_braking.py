@@ -1,3 +1,7 @@
+
+""" This is an ongoing work about _breaking_ the Caesar cipher
+"""
+
 # From: https://www.tutorialspoint.com/cryptography_with_python/cryptography_with_python_quick_guide.htm
 
 # Hacking of Caesar Cipher Algorithm
