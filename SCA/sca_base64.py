@@ -22,3 +22,9 @@ if __name__ == "__main__":
     str_crypt = encrypt(str_plain)
     str_check = decrypt(str_crypt)
     print(f"{str_plain} >> {str_crypt} >> {str_check == str_plain}")
+
+    # rendezvous
+    str_plain = "Otter call Cherry to rendezvous at 55.692200N, 012.546787E on 2023-08-29 13:00"
+    str_crypt = encrypt(str_plain)
+    str_check = decrypt(str_crypt)
+    print(f"{str_plain} >> {str_crypt} >> {str_check == str_plain}")
