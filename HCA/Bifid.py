@@ -1,4 +1,13 @@
-"""  https://www.geeksforgeeks.org/bifid-cipher-in-cryptography/
+# -*- coding: utf-8 -*-
+
+""" Part of HCA - Historical Crypto Algorithms - Not to be considered safe for encryption!
+
+Implementation of the Bifid Cipher
+https://www.geeksforgeeks.org/bifid-cipher-in-cryptography/
+
+Thanks to (code elements stolen from):
+ - https://www.geeksforgeeks.org/bifid-cipher-in-cryptography/
+
 
 Bifid Cipher in Cryptography
 
@@ -68,3 +77,80 @@ CIPHER-TEXT:  RLVFIRTIHATASUSTBCXSQECHUOLCITNGQQUT
 
 
 """
+
+
+# Function to create the Polybius square
+def create_polybius_square():
+    alphabet = "ABCDEFGHIKLMNOPQRSTUVWXYZ"  # No 'J' in the square
+    polybius_square = [list(alphabet[i:i + 5]) for i in range(0, 25, 5)]
+    return polybius_square
+
+
+# Function to encrypt the plaintext using the Bifid Cipher
+def bifid_encrypt(plaintext, polybius_square):
+    plaintext = plaintext.upper().replace("J", "I")  # Convert to uppercase and replace 'J' with 'I'
+    encrypted_numbers = []
+    for char in plaintext:
+        if char == " ":  # Ignore spaces
+            continue
+        row, col = find_position(char, polybius_square)
+        encrypted_numbers.append(row)
+        encrypted_numbers.append(col)
+
+    encrypted_numbers_combined = [str(num) for num in encrypted_numbers]
+    encrypted_numbers_str = "".join(encrypted_numbers_combined)
+    return bifid_rearrange(encrypted_numbers_str)
+
+
+# Function to find the position of a character in the Polybius square
+def find_position(char, polybius_square):
+    for row_idx, row in enumerate(polybius_square):
+        if char in row:
+            col_idx = row.index(char)
+            return row_idx + 1, col_idx + 1
+    raise ValueError(f"Character '{char}' not found in the Polybius square.")
+
+
+# Function to rearrange the encrypted numbers in the Bifid Cipher
+def bifid_rearrange(encrypted_numbers_str):
+    half_len = len(encrypted_numbers_str) // 2
+    row_nums = encrypted_numbers_str[:half_len]
+    col_nums = encrypted_numbers_str[half_len:]
+    combined_nums = [row + col for row, col in zip(row_nums, col_nums)]
+    return "".join(combined_nums)
+
+
+# Example usage
+if __name__ == "__main__":
+    polybius_square = create_polybius_square()
+
+    plaintext = "HELLO WORLD"
+    encrypted_text = bifid_encrypt(plaintext, polybius_square)
+
+    print("Original Message:", plaintext)
+    print("Encrypted Message:", encrypted_text)
+
+    # ToDo: Write the opposite, i.e., the decryption function.
+
+    # ToDo: Figure out why this code produces different result than quoted on the web page !? (see below)
+
+    """
+    Explanation:
+
+    The ‘create_polybius_square()' function creates the Polybius square as a 5×5 grid, excluding the letter ‘J’ 
+    (I and J are combined in this cipher).
+    The ‘bifid_encrypt()' function takes the plaintext and the Polybius square as input. It converts the plaintext to 
+    uppercase and replaces ‘J’ with ‘I’. Then, it finds the row and column positions of each letter in the Polybius 
+    square and combines them to form encrypted numbers.
+    The ‘find_position()' function finds the row and column position of a given character in the Polybius square.
+    The ‘bifid_rearrange()' function rearranges the encrypted numbers to form the final ciphertext.
+
+    Output :
+    
+    Original Message: HELLO WORLD
+    Encrypted Message: 313423442531133353314
+    
+    In this example, the plaintext “HELLO WORLD” is encrypted using the Bifid Cipher, resulting in the ciphertext 
+    “313423442531133353314”. To decrypt the ciphertext, the recipient would reverse the process by splitting the numbers 
+    into rows and columns and then looking up the corresponding letters in the Polybius square.
+    """

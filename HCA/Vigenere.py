@@ -4,7 +4,6 @@
 
 Implementation of the Vigenère cipher algorithm
 https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher
-
 https://www.geeksforgeeks.org/vigenere-cipher/
 https://rosettacode.org/wiki/Vigen%C3%A8re_cipher#Python
 
@@ -29,7 +28,7 @@ def encrypt(message, key):
 def decrypt(message, key):
     """ Vigenere decryption of message using key. """
     def dec(c, k):
-        ''' Single letter decryption. '''
+        """ Single letter decryption. """
         return chr(((ord(c) - ord(k) - 2 * ord('A')) % 26) + ord('A'))
     return ''.join(starmap(dec, zip(message, cycle(key))))
 
