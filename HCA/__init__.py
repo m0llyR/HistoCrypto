@@ -1,2 +1,0 @@
-
-""" HCA - Historical Crypto Algorithms """
