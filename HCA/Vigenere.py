@@ -12,60 +12,30 @@ Thanks to (code elements stolen from):
 -
 """
 
-look into starmap and cycle from itertool
-
-def rfe(keyword, start=0):
-    """ Repeat for ever - looping over keyword """
-    n = start
-    while True:
-        if n > len(keyword)-1: n = 0
-        yield keyword[n]
-        n += 1
-
-
-def myencrypt(str_clear):
-    str_cipher = ''
-
-    return str_cipher
-
-
-def mydecrypt(str_cipher):
-    str_clear = ''
-
-    return str_clear
-
-keyw = rfe("abc")
-
-for x in range(9):
-    print(x, next(keyw))
-
-
-'''Vigenere encryption and decryption'''
-
 from itertools import starmap, cycle
 
 
 def encrypt(message, key):
-    '''Vigenere encryption of message using key.'''
+    """ Vigenere encryption of message using key. """
     # Converted to uppercase.
     # Non-alpha characters stripped out.
     message = filter(str.isalpha, message.upper())
     def enc(c, k):
-        '''Single letter encryption.'''
+        """ Single letter encryption. """
         return chr(((ord(k) + ord(c) - 2 * ord('A')) % 26) + ord('A'))
     return ''.join(starmap(enc, zip(message, cycle(key))))
 
 
 def decrypt(message, key):
-    '''Vigenere decryption of message using key.'''
+    """ Vigenere decryption of message using key. """
     def dec(c, k):
-        '''Single letter decryption.'''
+        ''' Single letter decryption. '''
         return chr(((ord(c) - ord(k) - 2 * ord('A')) % 26) + ord('A'))
     return ''.join(starmap(dec, zip(message, cycle(key))))
 
 
 def main():
-    '''Demonstration'''
+    """ Demonstration """
     text = 'Beware the Jabberwock, my son! The jaws that bite, the claws that catch!'
     key = 'VIGENERECIPHER'
     encr = encrypt(text, key)
@@ -77,14 +47,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-import base64
-
-# def encode(key, string):
-#     encoded_chars = []
-#     for i in xrange(len(string)):
-#         key_c = key[i % len(key)]
-#         encoded_c = chr(ord(string[i]) + ord(key_c) % 256)
-#         encoded_chars.append(encoded_c)
-#     encoded_string = "".join(encoded_chars)
-#     return base64.urlsafe_b64encode(encoded_string)
