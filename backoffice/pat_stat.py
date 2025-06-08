@@ -1,7 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-
 """ pattern stat """
 
 fn = r"data/patters.txt"
