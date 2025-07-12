@@ -2,7 +2,7 @@
 # CSA - Simple Crypto Algorithms
 
 
- ### Simple Crypto Algorithms, Contemporary
+### Simple Crypto Algorithms, Contemporary
  
 From 1980 as it's roughly the birth of the Motorola 68000, and the modern avalable computer.
 
