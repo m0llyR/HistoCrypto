@@ -17,5 +17,4 @@ the 26 letters in the alphabet. We thereby get 26 different chi-square values. T
 shift s for which the number ChiSquare(s) is smallest is the most likely candidate
 for the shift that was used to encipher the message.
 
-
 """
