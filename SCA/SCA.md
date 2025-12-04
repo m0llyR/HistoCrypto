@@ -17,7 +17,7 @@ From 1980 as it's roughly the birth of the Motorola 68000, and the modern avalab
 
     BATON: Secret NSA Type 1 high-speed block cipher algorithm, used in 
     several products, such as the Fortezza Plus crypto card and the Philips 
-    GCD-Φ cryptographic processor.
+    GCD-Φ cryptographic processor. BATON algorithm itself is secret.
 
     HAVEQUICK: Frequency Hopping System used for ECCM. Implemented in the 
     Cypris crypto chip.
@@ -31,8 +31,8 @@ From 1980 as it's roughly the birth of the Motorola 68000, and the modern avalab
     * SKIPJACK: Block cipher algorithm used in products like Fortezza, 
     Fortezza Plus and the Palladium Secure Modem.
     It was also used in the ill-fated Clipper Chip that was featured in 
-    products like the AT&T; TSD-3600 telephone encryptor. The Skipjack 
-    algorithm was declassified by the NSA on 24 June 1998.
+    products like the AT&T; TSD-3600 telephone encryptor. 
+    * The Skipjack algorithm was declassified by the NSA on 24 June 1998.
 
     WALBURN: High-speed link encryption that uses so-called hairpin registers. 
     Used in products like KG-81, KG-94, KG-194, KG-95 and AIM (2004). 
